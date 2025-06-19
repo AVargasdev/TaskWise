@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="dashboard">
+  <main class="main-content">
+    <h1>Reportes</h1>
+    <section>
+      <h2>Generar Reporte</h2>
+      <form>
+        <label>Tipo de reporte:
+          <select>
+            <option>Tareas Completadas</option>
+            <option>Tareas Pendientes</option>
+            <option>Checklists</option>
+          </select>
+        </label>
+        <label>Rango de fechas:
+          <input type="date"> a <input type="date">
+        </label>
+        <button>Generar</button>
+      </form>
+    </section>
+    <section>
+      <h2>Historial de Reportes</h2>
+      <ul>
+        <li>Reporte Tareas Completadas - 05/06/2025 <button>Descargar</button></li>
+        <li>Reporte Checklists - 01/06/2025 <button>Descargar</button></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Estadísticas</h2>
+      <div class="stats">
+        <div class="card">Tareas completadas este mes: 30</div>
+        <div class="card">Checklists generados: 12</div>
+      </div>
+    </section>
+    <a href="cuenta.html" class="btn" style="margin-top:30px;">Siguiente: Cuenta</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,640 @@
+/* Quitamos márgenes y espacios de todos los elementos para que todo se vea parejo en todos los navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo base del fondo y texto para toda la página */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #181818;
+  color: #f1f1f1;
+}
+
+/* Estilo especial para la página de inicio con fondo bonito y contenido centrado */
+body.landing-page {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #181818 0%, #232946 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Caja principal en la página de inicio, con fondo semi-transparente y bordes redondeados */
+.container {
+  text-align: center;
+  background-color: rgba(35, 41, 70, 0.92);
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18), 0 1.5px 8px rgba(0,0,0,0.07);
+  animation: fadeIn 1.2s ease;
+  max-width: 500px;
+}
+
+/* Espacio donde va el logo, centrado en la página de inicio */
+.logo-box {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen del logo ajustada al tamaño del cuadro */
+.logo-box img {
+  width: 220px;
+  height: 100px;
+  object-fit: contain;
+  background: transparent;
+  display: block;
+}
+
+/* Clase que sirve para centrar cualquier cosa en pantalla */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Estilo para todos los botones, con color llamativo y efecto al pasar el mouse */
+.btn,
+button,
+input[type="submit"] {
+  background: linear-gradient(to right, #232946, #181818);
+  padding: 12px 24px;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+/* Efecto cuando pasamos el mouse por encima del botón */
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #393e6e, #232946);
+}
+
+/* Caja del formulario de login con efecto visual moderno */
+.login-box {
+  background: linear-gradient(135deg, #181818 0%, #232946 100%);
+  padding: 38px 32px 32px 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.65), 0 1.5px 8px rgba(0,0,0,0.28);
+  width: 340px;
+  margin: 40px auto;
+  animation: fadeIn 1s cubic-bezier(.39,.575,.56,1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Circulito decorativo en la esquina de la caja del login */
+.login-box::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #393e6e 0%, #232946 100%);
+  border-radius: 50%;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+/* Título del formulario de login centrado y destacado */
+.login-box h2 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Etiquetas de los campos del formulario con estilo claro y legible */
+.login-box label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #bfc9d9;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 1em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilo para los campos del formulario (usuario, contraseña, etc.) */
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #393e6e;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 1em;
+  background: #232946;
+  color: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Efecto cuando hacemos clic en un campo de texto */
+.login-box input:focus {
+  border: 1.5px solid #7f9cf5;
+  box-shadow: 0 0 0 2px #7f9cf555;
+}
+
+/* Botón dentro del login, ocupa todo el ancho y se ve destacado */
+.login-box .btn {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 1.1em;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.20);
+  position: relative;
+  z-index: 1;
+}
+
+/* Enlaces como "¿Olvidaste tu contraseña?" debajo del login */
+.login-box .extra-links {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.97em;
+  color: #bfc9d9;
+  position: relative;
+  z-index: 1;
+}
+
+.login-box .extra-links a {
+  color: #7f9cf5;
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.2s;
+}
+
+/* Cambia el color del enlace cuando pasamos el mouse encima */
+.login-box .extra-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Animación suave para que los elementos aparezcan con efecto al cargar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Diseño principal del dashboard con menú a la izquierda y contenido a la derecha */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #181818;
+}
+
+/* Menú lateral con fondo oscuro y sombras para destacarlo */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(to bottom, #181818, #232946);
+  color: white;
+  padding: 20px;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Título que aparece arriba en el menú lateral */
+.sidebar h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Lista de opciones dentro del menú lateral */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilo de cada opción del menú lateral */
+.sidebar li {
+  margin: 15px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* Cambio de color cuando pasamos el mouse por las opciones del menú */
+.sidebar li:hover,
+.sidebar li.active {
+  background: rgba(127, 156, 245, 0.10);
+  padding-left: 18px;
+}
+
+/* Estilo de los enlaces dentro del menú lateral */
+.sidebar a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+/* Área donde se muestra el contenido al hacer clic en el menú */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+/* Tarjetas que muestran datos importantes o estadísticas en el dashboard */
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: #232946;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  min-width: 180px;
+}
+
+/* Efecto visual cuando pasamos el mouse por una tarjeta */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Colores diferentes para las tarjetas según el tipo de dato */
+.completado {
+  background: linear-gradient(to right, #256029, #181818);
+}
+
+.pendiente {
+  background: linear-gradient(to right, #a05a00, #181818);
+  color: #ffd700;
+}
+
+.total {
+  background: linear-gradient(to right, #393e6e, #181818);
+}
+
+/* Sección para filtros de búsqueda o botones para exportar información */
+.filtros, .reportes {
+  margin-top: 20px;
+}
+
+/* Estilo de los campos para filtrar información */
+.filtros input {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid #393e6e;
+  background: #232946;
+  color: #fff;
+}
+
+/* Efecto cuando hacemos clic en un campo de filtro */
+.filtros input:focus {
+  border: 1.5px solid #7f9cf5;
+  outline: none;
+}
+
+/* Botón para aplicar filtros de búsqueda */
+.filtros button {
+  padding: 8px 16px;
+  background: #232946;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+/* Estilo de botón cuando pasamos el mouse encima */
+.filtros button:hover {
+  background: #393e6e;
+}
+
+/* Botones para exportar o generar reportes */
+.reportes button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background: #393e6e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por los botones de reportes */
+.reportes button:hover {
+  background: #7f9cf5;
+  color: #232946;
+}
+
+/* Lista de tareas y subtareas agrupadas en bloques visuales */
+.checklist-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist-list > ul > li {
+  background: #232946;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  padding: 18px 18px 10px 18px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+  position: relative;
+}
+
+/* Texto importante dentro de las tareas resaltado con color */
+.checklist-list strong {
+  color: #7f9cf5;
+  font-size: 1.1em;
+}
+
+/* Sublistas de tareas con espacio a la izquierda */
+.checklist-list ul ul {
+  margin: 10px 0 10px 20px;
+}
+
+/* Casillas de verificación más grandes y de color personalizado */
+.checklist-list input[type="checkbox"] {
+  accent-color: #7f9cf5;
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+/* Botones dentro de las tareas */
+.checklist-list button {
+  margin-right: 8px;
+  margin-top: 8px;
+  padding: 6px 16px;
+  font-size: 0.95em;
+}
+
+/* Historial de tareas anteriores en la aplicación */
+.checklist-historial {
+  margin-top: 30px;
+}
+
+/* Estilo de lista para el historial de tareas completadas */
+.checklist-historial ul {
+  list-style: disc inside;
+  color: #bfc9d9;
+  margin-left: 20px;
+}
+
+/* Estilo general para mostrar usuarios o datos en tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 28px 0;
+  background: #232946;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+}
+
+/* Títulos de las columnas de la tabla con fondo oscuro */
+th, td {
+  padding: 14px 10px;
+  text-align: left;
+}
+
+th {
+  background: #393e6e;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Celdas de la tabla con línea separadora */
+td {
+  border-bottom: 1px solid #393e6e;
+}
+
+/* Última fila de la tabla sin línea inferior */
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Botones dentro de la tabla de administración */
+table button {
+  padding: 6px 14px;
+  font-size: 0.95em;
+  margin-right: 5px;
+}
+
+/* Títulos grandes para secciones en el contenido */
+section > h2 {
+  color: #7f9cf5;
+  margin-bottom: 10px;
+  margin-top: 18px;
+}
+
+/* Estilo para etiquetas de formularios */
+form label {
+  color: #bfc9d9;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+/* Estilo para todos los campos de formulario (texto, fechas, etc.) */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #393e6e;
+  background: #232946;
+  color: #fff;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+/* Efecto cuando hacemos clic dentro de un campo de formulario */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+  border: 1.5px solid #7f9cf5;
+  outline: none;
+}
+
+/* Botones en formularios con espacio arriba y abajo */
+form button,
+input[type="submit"] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Tamaño mínimo de las tarjetas de estadísticas */
+.stats .card {
+  min-width: 180px;
+}
+
+/* Quitamos márgenes en listas por defecto */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Márgenes para listas dentro de secciones */
+section ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para elementos de las listas con texto claro */
+section ul li {
+  margin-bottom: 8px;
+  color: #bfc9d9;
+}
+
+/* Botones dentro de listas de reportes */
+section ul li button {
+  margin-left: 10px;
+  padding: 5px 12px;
+  font-size: 0.95em;
+}
+
+/* Formularios y botones en la sección de cuenta del usuario */
+.main-content form {
+  margin-bottom: 18px;
+}
+
+/* Etiquetas dentro de formularios de cuenta */
+.main-content form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Casillas de verificación en los formularios de cuenta */
+.main-content form input[type="checkbox"] {
+  accent-color: #7f9cf5;
+  margin-right: 6px;
+  transform: scale(1.1);
+}
+
+/* Tamaño mínimo para los selectores desplegables */
+.main-content form select {
+  min-width: 120px;
+}
+
+/* Botón de cerrar sesión con color diferente para destacarlo */
+.main-content button[style*="margin-top:20px"] {
+  background: #a05a00;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* Cambio de color del botón de cerrar sesión al pasar el mouse */
+.main-content button[style*="margin-top:20px"]:hover {
+  background: #ffd700;
+  color: #232946;
+}
+
+/* Lista de tareas recientes que se ven en el dashboard */
+.ultimas-tareas ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+/* Estilo de cada tarea reciente con texto claro */
+.ultimas-tareas li {
+  margin-bottom: 10px;
+  font-size: 1.08em;
+  color: #bfc9d9;
+}
+
+/* Color especial para tareas ya completadas */
+.ultimas-tareas .completado {
+  color: #4caf50;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Color especial para tareas pendientes */
+.ultimas-tareas .pendiente {
+  color: #ffd700;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Cambios cuando se ve en pantallas medianas (como tablets) */
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0 0 18px 18px;
+    margin-bottom: 18px;
+  }
+  .main-content {
+    padding: 18px;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Cambios cuando se ve en celulares */
+@media (max-width: 600px) {
+  .container {
+    padding: 18px 8px;
+  }
+  .sidebar {
+    padding: 10px;
+  }
+  .main-content {
+    padding: 8px;
+  }
+  .card {
+    padding: 12px;
+    font-size: 0.98em;
+  }
+}
+
+/* Título principal de la página de inicio */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #7f9cf5;
+}
+
+/* Estilo general de los párrafos en la página */
+p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #bfc9d9;
+}
